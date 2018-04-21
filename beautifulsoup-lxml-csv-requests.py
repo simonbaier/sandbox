@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
-import requests
-# import csv
-import lxml
+import requests  # for retrieving remote file / web page
+import csv    # for saving output to a csv file
+import lxml # does even need to be imported?
 
 # import sys
 # %pwd
@@ -12,6 +12,13 @@ import lxml
 ## import urllib.request
 ## source = urllib.request.urlopen('https://pythonprogramming.net/parsememcparseface/').read()
 ## Beautiful Soup 4 documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+for paragraph in soup.find_all('p'):
+    print(paragraph.string)
+    print(str(paragraph.text))
+# or
+for url in soup.find_all('a'):
+    print(url.get('href'))
+
 
 
 # xpath = '//*[@id="templateHeader"]/table[2]/tbody/tr/td/table/tbody/tr/td/div[3]/ul'
